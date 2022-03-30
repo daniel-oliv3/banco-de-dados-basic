@@ -1,13 +1,18 @@
 Comando para criar um banco de dados.
 ### CREATE DATABASE cadastro;
 
+Comando para usar o banco de dados criado
+### USE cadastro;
+
+
+
 
 Comando para criar uma tabela Exp 01.
 ### CREATE TABLE `pessoas`(
     nome varchar(30),
     idade tinyint(3),
     sexo char(1),
-    peso decimal(),
+    peso float,
     nacionalidade varchar(20)
 );
 
