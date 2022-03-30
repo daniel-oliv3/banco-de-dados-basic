@@ -1,4 +1,4 @@
-Comando para criar uma banco de dados.
+Comando para criar um banco de dados.
 ### CREATE DATABASE cadastro;
 
 Comando para criar uma tabela.
