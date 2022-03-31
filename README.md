@@ -1,4 +1,4 @@
-### 3* ----- Criando a primeira tabela
+### 3* ----- Criando a Primeira Tabela
 Comando para criar um banco de dados.
 ### CREATE DATABASE cadastro;
 
@@ -19,7 +19,7 @@ Comando DESCRIBE mostra uma descrição da tabela criada
 ### DESCRIBE pessoas;
 
 
-### 4* ----- Atualizando a tabela com id
+### 4* ----- Atualizando a Tabela com Id
 Comando para apagar um banco de dados
 ### DROP DATABASE cadastro;
 
@@ -59,3 +59,12 @@ Comando para inserir varios dados na tabela Exp 03.
                    (DEFAULT, 'Thiago', '1986-18-12', 'M', '80.5', '1.67', DEFAULT),
                    (DEFAULT, 'Daniel', '1985-13-08', 'M', '78.5', '1.65', 'Brasil'),
                    (DEFAULT, 'Janaína', '2004-03-07', 'F', '50.5', '1.65', 'Eua');
+
+
+### 6* ----- Alterando a Estrutura de uma Tabela (ALTER TABLE)
+
+### ALTER TABLE pessoas
+ADD COLUMN profissao VARCHAR(10);
+
+Comando de descrição do container pessoas
+### DESC pessoas;
