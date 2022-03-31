@@ -15,19 +15,19 @@ Comando para criar uma tabela Exp 01.
 );
 
 
-### Comando DESCRIBE mostra uma descrição da tabela criada
-DESCRIBE pessoas;
+Comando DESCRIBE mostra uma descrição da tabela criada
+### DESCRIBE pessoas;
 
 
 ### 4* ------------------------------
-### Comando para apagar um banco de dados
-DROP DATABASE cadastro;
+Comando para apagar um banco de dados
+### DROP DATABASE cadastro;
 
 
-### Comando para criar uma tabela Exp 02.
-CREATE DATABASE cadastro2
-DEFAULT CHARACTER SET utf8
-DEFAULT COLLATE utf8_general_ci;
+Comando para criar uma tabela Exp 02.
+### CREATE DATABASE cadastro2
+### DEFAULT CHARACTER SET utf8
+### DEFAULT COLLATE utf8_general_ci;
 
 ### CREATE TABLE `pessoas`(
     `id` int not null auto_increment,
