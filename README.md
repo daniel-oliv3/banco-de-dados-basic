@@ -42,10 +42,20 @@ Comando para criar uma tabela Exp 02.
 
 
 ### 5* ----- Inserindo Dados na Tabela (INSERT INTO)
-Comando para inserir dados na tabela
+Comando para inserir dados na tabela Exp 01.
 ### INSERT INTO pessoas (nome, nascimento, sexo, peso, altura, nacionalidade) VALUES
-					('Sapup3', '1985-13-08', 'M', '78.5', '1.65', 'Brasil');
+                   ('Sapup3', '1985-13-08', 'M', '78.5', '1.65', 'Brasil');
 
 Comando para visualizar todos os campos da tabela
 ### SELECT * FROM pessoas;
 
+Comando para inserir dados na tabela Exp 02.
+### INSERT INTO pessoas (nome, nascimento, sexo, peso, altura, nacionalidade) VALUES
+                   (DEFAULT, 'Sapup3', '1985-13-08', 'M', '78.5', '1.65', DEFAULT);
+
+
+Comando para inserir varios dados na tabela Exp 03.
+### INSERT INTO pessoas  VALUES
+                   (DEFAULT, 'Thiago', '1986-18-12', 'M', '80.5', '1.67', DEFAULT),
+                   (DEFAULT, 'Daniel', '1985-13-08', 'M', '78.5', '1.65', 'Brasil'),
+                   (DEFAULT, 'Janaína', '2004-03-07', 'F', '50.5', '1.65', 'Eua');
