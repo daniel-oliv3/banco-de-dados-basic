@@ -1,4 +1,4 @@
-### 3* ------------------------------
+### 3* ----- Criando a primeira tabela
 Comando para criar um banco de dados.
 ### CREATE DATABASE cadastro;
 
@@ -19,7 +19,7 @@ Comando DESCRIBE mostra uma descrição da tabela criada
 ### DESCRIBE pessoas;
 
 
-### 4* ------------------------------
+### 4* ----- Atualizando a tabela com id
 Comando para apagar um banco de dados
 ### DROP DATABASE cadastro;
 
@@ -41,5 +41,11 @@ Comando para criar uma tabela Exp 02.
 )default charset = utf8;
 
 
-### 5* ------------------------------
+### 5* ----- Inserindo Dados na Tabela (INSERT INTO)
+Comando para inserir dados na tabela
+### INSERT INTO pessoas (nome, nascimento, sexo, peso, altura, nacionalidade) VALUES
+					('Sapup3', '1985-13-08', 'M', '78.5', '1.65', 'Brasil');
+
+Comando para visualizar todos os campos da tabela
+### SELECT * FROM pessoas;
 
