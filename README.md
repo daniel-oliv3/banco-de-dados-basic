@@ -8,13 +8,18 @@ Comando para usar o banco de dados criado
 
 
 Comando para criar uma tabela Exp 01.
-### CREATE TABLE `pessoas`(
+### CREATE TABLE pessoas(
     nome varchar(30),
     idade tinyint(3),
     sexo char(1),
     peso float,
     nacionalidade varchar(20)
 );
+
+
+Comando DESCRIBE mostra uma descriçao da tabela criada
+### DESCRIBE pessoas;
+
 
 
 Comando para criar uma tabela Exp 02.
