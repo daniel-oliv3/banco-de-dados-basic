@@ -1,4 +1,4 @@
-3* --------------- Aula --------------- 
+
 Comando para criar um banco de dados.
 ### CREATE DATABASE cadastro;
 
@@ -19,7 +19,6 @@ Comando DESCRIBE mostra uma descriçao da tabela criada
 ### DESCRIBE pessoas;
 
 
-4* --------------- Aula --------------- 
 Comando para apagar um banco de dados
 ### DROP DATABASE cadastro;
 
