@@ -14,7 +14,7 @@ Comando para criar uma tabela Exp 01.
     sexo char(1),
     peso float,
     nacionalidade varchar(20)
-);
+### );
 
 
 Comando DESCRIBE mostra uma descrição da tabela criada.
@@ -39,7 +39,7 @@ Comando para criar uma tabela Exp 02.
     `altura` decimal(3, 2),
     `nacionalidade` varchar(20) default 'Brasil',
     primary key (id)
-)default charset = utf8;
+### )default charset = utf8;
 
 
 
@@ -123,8 +123,20 @@ Comando para criar uma nova tabela e verificar se ela ja existe.
 ### )default charset=utf8;
 
 
+Comando para adicionar uma nova coluna na tabela.
+### ALTER TABLE cursos
+### ADD COLUMN idcursos INT FIRST;
 
 
+Comando para atribuir a idcursos como sendo a chave primaria.
+### ALTER TABLE cursos
+### ADD PRIMARY KEY (idcursos);
+
+
+Comando que mostra a descrição.
+### describe cursos;
+ou
+### desc cursos;
 
 
 
