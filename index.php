@@ -9,6 +9,15 @@
 	<link rel="shortcut icon" href="img/favicon.ico"/>
 </head>
 <body>
+
+
+	<?php
+	
+		echo 'Olá, Mundo';
+	
+	?>
+
+
 	
 	<script src="js/script.js"></script>
 </body>
