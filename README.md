@@ -140,6 +140,8 @@ ou
 
 
 
+Comando para apagar a tabela.
+### DROP TABLE curso;
 
 
 
