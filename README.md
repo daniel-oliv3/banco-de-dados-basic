@@ -67,7 +67,6 @@ Comando para inserir varios dados na tabela Exp 03.
 
 
 ### 6* ----- Alterando a Estrutura de uma Tabela (ALTER TABLE)
-
 Comando para adicionar um novo campo na tabela
 ### ALTER TABLE pessoas
 ADD COLUMN profissao VARCHAR(10);
@@ -96,14 +95,51 @@ Comando para escolher a primeira posição da coluna.
 
 
 
-Comando para modificar definições
+Comando para modificar definições.
 ### ALTER TABLE pessoas
 ### MODIFY COLUMN profissao varchar(20);
 
 
 
-Comando para renomear uma coluna
+Comando para renomear uma coluna.
 ### ALTER TABLE pessoas
 ### CHANGE COLUMN profissao prof varchar(20);
+
+
+
+Comando para renomear toda a tabela.
+### ALTER TABLE pessoas
+### RENAME TO humanos;
+
+
+
+Comando para criar uma nova tabela e verificar se ela ja existe.
+### CREATE TABLE IF NOT EXISTS cursos (
+    nome varchar(30) not null unique,
+    desxricao text,
+    carga int unsigned,
+    totaulas int unsgned,
+    ano year default '2022'
+### )default charset=utf8;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
