@@ -3,7 +3,7 @@ Comando para criar um banco de dados.
 ### CREATE DATABASE cadastro;
 
 
-Comando para usar o banco de dados criado
+Comando para usar o banco de dados criado.
 ### USE cadastro;
 
 
@@ -17,12 +17,12 @@ Comando para criar uma tabela Exp 01.
 );
 
 
-Comando DESCRIBE mostra uma descrição da tabela criada
+Comando DESCRIBE mostra uma descrição da tabela criada.
 ### DESCRIBE pessoas;
 
 
 ### 4* ----- Atualizando a Tabela com Id
-Comando para apagar um banco de dados
+Comando para apagar um banco de dados.
 ### DROP DATABASE cadastro;
 
 
@@ -49,7 +49,7 @@ Comando para inserir dados na tabela Exp 01.
                    ('Sapup3', '1985-13-08', 'M', '78.5', '1.65', 'Brasil');
 
 
-Comando para visualizar todos os campos da tabela
+Comando para visualizar todos os campos da tabela.
 ### SELECT * FROM pessoas;
 
 
@@ -73,10 +73,23 @@ Comando para inserir varios dados na tabela Exp 03.
 ADD COLUMN profissao VARCHAR(10);
 
 
-Comando de descrição do container pessoas
+
+Comando de descrição do container pessoas.
 ### DESC pessoas;
 
 
-Comando para apagar um coluna da tabela
+
+Comando para apagar um coluna da tabela.
 ### ALTER TABLE pessoas
 ### DROP COLUMN profissao;
+
+
+Comando para escolher a posição da coluna.
+### ALTER TABLE pessoas
+### ADD COLUMN profissao varchar(10) AFTER nome;
+
+
+
+Comando para escolher a primeira posição da coluna.
+### ALTER TABLE pessoas
+### ADD COLUMN codigo INT FIRST;
