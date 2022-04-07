@@ -2,8 +2,10 @@
 Comando para criar um banco de dados.
 ### CREATE DATABASE cadastro;
 
+
 Comando para usar o banco de dados criado
 ### USE cadastro;
+
 
 Comando para criar uma tabela Exp 01.
 ### CREATE TABLE pessoas(
@@ -28,7 +30,6 @@ Comando para criar uma tabela Exp 02.
 ### CREATE DATABASE cadastro2
 ### DEFAULT CHARACTER SET utf8
 ### DEFAULT COLLATE utf8_general_ci;
-
 ### CREATE TABLE `pessoas`(
     `id` int not null auto_increment,
     `nome` varchar(30) not null,
@@ -41,13 +42,16 @@ Comando para criar uma tabela Exp 02.
 )default charset = utf8;
 
 
+
 ### 5* ----- Inserindo Dados na Tabela (INSERT INTO)
 Comando para inserir dados na tabela Exp 01.
 ### INSERT INTO pessoas (nome, nascimento, sexo, peso, altura, nacionalidade) VALUES
                    ('Sapup3', '1985-13-08', 'M', '78.5', '1.65', 'Brasil');
 
+
 Comando para visualizar todos os campos da tabela
 ### SELECT * FROM pessoas;
+
 
 Comando para inserir dados na tabela Exp 02.
 ### INSERT INTO pessoas (nome, nascimento, sexo, peso, altura, nacionalidade) VALUES
@@ -61,10 +65,18 @@ Comando para inserir varios dados na tabela Exp 03.
                    (DEFAULT, 'Janaína', '2004-03-07', 'F', '50.5', '1.65', 'Eua');
 
 
+
 ### 6* ----- Alterando a Estrutura de uma Tabela (ALTER TABLE)
+
 
 ### ALTER TABLE pessoas
 ADD COLUMN profissao VARCHAR(10);
 
+
 Comando de descrição do container pessoas
 ### DESC pessoas;
+
+
+Comando para apagar um coluna da tabela
+### ALTER TABLE pessoas
+### DROP COLUMN profissao;
