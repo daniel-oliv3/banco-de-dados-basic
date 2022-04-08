@@ -146,7 +146,7 @@ Comando para apagar a tabela.
 
 
 ### 7 - Manipulando Linhas (UPDATE, DELETE e TRUNCATE).
-Comando para manipulação de registro.
+Comando para inserir novos registros
 ### INSERT INTO cursos VALUES
 ('1','HTML4','Curso de HTML5', '40','37','2014'), 
 ('2','Algoritmos','Lógica de Programação','20','15','2014'), 
@@ -161,7 +161,19 @@ Comando para manipulação de registro.
 
 
 
+Comando para manipulação de registro.
+### UPDATE cursos
+### SET nome = 'HTML5'
+### WHERE idcurso = '1';
 
+### UPDATE cursos
+### SET nome = 'PHP', ano = '2015'
+### WHERE idcurso = '4';
+
+### UPDATE cursos
+### SET nome = 'Java', carga = '40', ano = '2015'
+### WHERE idcurso = '5'
+### LIMIT 1;
 
 
 
