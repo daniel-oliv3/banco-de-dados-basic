@@ -161,23 +161,30 @@ Comando para inserir novos registros
 
 
 
-Comando para manipulação de registro.
+Comando para manipulação de registro - (Update)
 ### UPDATE cursos
 ### SET nome = 'HTML5'
-### WHERE idcurso = '1';
+### WHERE idcursos = '1';
 
 ### UPDATE cursos
 ### SET nome = 'PHP', ano = '2015'
-### WHERE idcurso = '4';
+### WHERE idcursos = '4';
 
 ### UPDATE cursos
 ### SET nome = 'Java', carga = '40', ano = '2015'
-### WHERE idcurso = '5'
+### WHERE idcursos = '5'
 ### LIMIT 1;
 
 
 
+Comando para remover uma linha
+### DELETE FROM cursos
+### WHERE idcursos = '8';
 
+
+### DELETE FROM cursos
+### WHERE ANO = '2018'
+### LIMIT 3;
 
 
 
