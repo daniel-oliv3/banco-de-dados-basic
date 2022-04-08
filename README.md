@@ -1,4 +1,4 @@
-### 3* ----- Criando a Primeira Tabela
+### 3* ----- Criando a Primeira Tabela.
 Comando para criar um banco de dados.
 ### CREATE DATABASE cadastro;
 
@@ -21,7 +21,7 @@ Comando DESCRIBE mostra uma descrição da tabela criada.
 ### DESCRIBE pessoas;
 
 
-### 4* ----- Atualizando a Tabela com Id
+### 4* ----- Atualizando a Tabela com Id.
 Comando para apagar um banco de dados.
 ### DROP DATABASE cadastro;
 
@@ -43,7 +43,7 @@ Comando para criar uma tabela Exp 02.
 
 
 
-### 5* ----- Inserindo Dados na Tabela (INSERT INTO)
+### 5* ----- Inserindo Dados na Tabela (INSERT INTO).
 Comando para inserir dados na tabela Exp 01.
 ### INSERT INTO pessoas (nome, nascimento, sexo, peso, altura, nacionalidade) VALUES
                    ('Sapup3', '1985-13-08', 'M', '78.5', '1.65', 'Brasil');
@@ -66,7 +66,7 @@ Comando para inserir varios dados na tabela Exp 03.
 
 
 
-### 6* ----- Alterando a Estrutura de uma Tabela (ALTER TABLE)
+### 6* ----- Alterando a Estrutura de uma Tabela (ALTER TABLE).
 Comando para adicionar um novo campo na tabela
 ### ALTER TABLE pessoas
 ADD COLUMN profissao VARCHAR(10);
@@ -145,7 +145,19 @@ Comando para apagar a tabela.
 
 
 
-
+### 7 - Manipulando Linhas (UPDATE, DELETE e TRUNCATE).
+Comando para manipulação de registro.
+### INSERT INTO cursos VALUES
+('1','HTML4','Curso de HTML5', '40','37','2014'), 
+('2','Algoritmos','Lógica de Programação','20','15','2014'), 
+('3','Photoshop','Dicas de Photoshop CC','10','8','2014'), 
+('4','PGP','Curso de PHP para iniciantes','40','20','2010'),
+('5','Jarva','Introdução à Linguagem Java','10','29','2000'),
+('6','MySQL','Banco de Dados MySQL','30','15','2016'),
+('7','Word','Curso completo de Word','40','30','2016'), 
+('8','Sapateado','Danças Rítmicas','40','30','2018'),
+('9','Cozinha Árabe','Aprenda a fazer Kibe','40','30','2018'), 
+('10','Youtuber','Gerar polêmica e ganhar inscritos','5','2','2018');
 
 
 
