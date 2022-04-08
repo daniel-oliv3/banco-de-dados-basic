@@ -158,6 +158,7 @@ Comando para inserir novos registros.
 ('10','Youtuber','Gerar polêmica e ganhar inscritos','5','2','2018');
 
 
+
 Comando para manipulação de registro - (Update).
 ### UPDATE cursos
 ### SET nome = 'HTML5'
