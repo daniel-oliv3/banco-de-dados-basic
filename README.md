@@ -137,15 +137,24 @@ Comando para apagar a tabela.
 ### 7 - Manipulando Linhas (UPDATE, DELETE e TRUNCATE).
 Comando para inserir novos registros.
 ### INSERT INTO cursos VALUES
-('1','HTML4','Curso de HTML5', '40','37','2014'), 
-('2','Algoritmos','Lógica de Programação','20','15','2014'), 
-('3','Photoshop','Dicas de Photoshop CC','10','8','2014'), 
+('1','HTML4','Curso de HTML5', '40','37','2014'),
+
+('2','Algoritmos','Lógica de Programação','20','15','2014'),
+
+('3','Photoshop','Dicas de Photoshop CC','10','8','2014'),
+
 ('4','PGP','Curso de PHP para iniciantes','40','20','2010'),
+
 ('5','Jarva','Introdução à Linguagem Java','10','29','2000'),
+
 ('6','MySQL','Banco de Dados MySQL','30','15','2016'),
-('7','Word','Curso completo de Word','40','30','2016'), 
+
+('7','Word','Curso completo de Word','40','30','2016'),
+
 ('8','Sapateado','Danças Rítmicas','40','30','2018'),
+
 ('9','Cozinha Árabe','Aprenda a fazer Kibe','40','30','2018'), 
+
 ('10','Youtuber','Gerar polêmica e ganhar inscritos','5','2','2018');
 
 
@@ -154,9 +163,11 @@ Comando para manipulação de registro - (Update).
 ### SET nome = 'HTML5'
 ### WHERE idcursos = '1';
 
+
 ### UPDATE cursos
 ### SET nome = 'PHP', ano = '2015'
 ### WHERE idcursos = '4';
+
 
 ### UPDATE cursos
 ### SET nome = 'Java', carga = '40', ano = '2015'
@@ -180,3 +191,7 @@ Comando para remover todas as linhas da tabela (Truncate).
 
 Comando para mostrar todos os registros da tabela
 ### SELECT * FROM cursos;
+
+
+
+### 8 - Gerenciando Cópias de Segurança MySQL.
