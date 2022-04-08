@@ -42,7 +42,6 @@ Comando para criar uma tabela Exp 02.
 ### )default charset = utf8;
 
 
-
 ### 5* ----- Inserindo Dados na Tabela (INSERT INTO).
 Comando para inserir dados na tabela Exp 01.
 ### INSERT INTO pessoas (nome, nascimento, sexo, peso, altura, nacionalidade) VALUES
@@ -65,17 +64,14 @@ Comando para inserir varios dados na tabela Exp 03.
                    (DEFAULT, 'Janaína', '2004-03-07', 'F', '50.5', '1.65', 'Eua');
 
 
-
 ### 6* ----- Alterando a Estrutura de uma Tabela (ALTER TABLE).
 Comando para adicionar um novo campo na tabela
 ### ALTER TABLE pessoas
 ADD COLUMN profissao VARCHAR(10);
 
 
-
 Comando de descrição do container pessoas.
 ### DESC pessoas;
-
 
 
 Comando para apagar um coluna da tabela.
@@ -88,11 +84,9 @@ Comando para escolher a posição da coluna.
 ### ADD COLUMN profissao varchar(10) AFTER nome;
 
 
-
 Comando para escolher a primeira posição da coluna.
 ### ALTER TABLE pessoas
 ### ADD COLUMN codigo INT FIRST;
-
 
 
 Comando para modificar definições.
@@ -100,17 +94,14 @@ Comando para modificar definições.
 ### MODIFY COLUMN profissao varchar(20);
 
 
-
 Comando para renomear uma coluna.
 ### ALTER TABLE pessoas
 ### CHANGE COLUMN profissao prof varchar(20);
 
 
-
 Comando para renomear toda a tabela.
 ### ALTER TABLE pessoas
 ### RENAME TO humanos;
-
 
 
 Comando para criar uma nova tabela e verificar se ela ja existe.
@@ -139,14 +130,12 @@ ou
 ### desc cursos;
 
 
-
 Comando para apagar a tabela.
 ### DROP TABLE curso;
 
 
-
 ### 7 - Manipulando Linhas (UPDATE, DELETE e TRUNCATE).
-Comando para inserir novos registros
+Comando para inserir novos registros.
 ### INSERT INTO cursos VALUES
 ('1','HTML4','Curso de HTML5', '40','37','2014'), 
 ('2','Algoritmos','Lógica de Programação','20','15','2014'), 
@@ -160,8 +149,7 @@ Comando para inserir novos registros
 ('10','Youtuber','Gerar polêmica e ganhar inscritos','5','2','2018');
 
 
-
-Comando para manipulação de registro - (Update)
+Comando para manipulação de registro - (Update).
 ### UPDATE cursos
 ### SET nome = 'HTML5'
 ### WHERE idcursos = '1';
@@ -176,8 +164,7 @@ Comando para manipulação de registro - (Update)
 ### LIMIT 1;
 
 
-
-Comando para remover uma linha
+Comando para remover uma linha da tabela (Delete).
 ### DELETE FROM cursos
 ### WHERE idcursos = '8';
 
@@ -187,4 +174,9 @@ Comando para remover uma linha
 ### LIMIT 3;
 
 
+Comando para remover todas as linhas da tabela (Truncate).
+### TRUNCATE TABLE cursos;
 
+
+Comando para mostrar todos os registros da tabela
+### SELECT * FROM cursos;
