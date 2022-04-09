@@ -280,7 +280,7 @@ Comando que seleciona linhas(mostra o conteudo de nome e de carga)
 ### ORDER BY ano;
 
 
-### -- 12 - SELECT (Parte 2).
+### 12 - SELECT (Parte 2).
 -- mostranto todos os cursos que começam com a letra 'p'. 
 ### SELECT * FROM cursos
 ### WHERE nome LIKE 'p%';
@@ -378,10 +378,11 @@ Comando que seleciona linhas(mostra o conteudo de nome e de carga)
 -- ira tirar a media todas as horas de totaualas do ano de 2016
 ### SELECT avg(totaulas) FROM cursos WHERE ano = '2016'; 
 
+
 ### -- LISTA DE EXERCICIOS AULA 12
 ### USE cadastro;
-
 ### SELECT * FROM humanos;
+
 
 -- 1 - UMA LISTA COM O NOME DE TODAS AS HUMANOS
 ### SELECT nome FROM humanos WHERE sexo = 'F' ORDER BY nome;
@@ -409,3 +410,92 @@ Comando que seleciona linhas(mostra o conteudo de nome e de carga)
 
 -- 9 - QUANTOS HUMANOS MULHERES TEM MAIS DE 1.90M DE ALTURA
 ### SELECT count(altura) FROM humanos WHERE sexo='F' and altura > '1.90';
+
+
+
+### 13 - SELECT (Parte 3)
+-- para agrupar e totalizar o numero de cada grupo
+### SELECT totaulas, count(*) from cursos
+### GROUP BY totaulas
+### ORDER BY totaulas;
+
+-- ira mostrar a quantidade de veses que o registro com 30 hrs se repete(total 6 cursos com 30 hrs)
+### SELECT * FROM cursos where totaulas = 30;
+
+-- ira mostrar a quantidade de veses que o registro com 12 hrs se repete(total 5 cursos com 12 hrs)
+### SELECT * FROM cursos where totaulas = 12;
+
+-- ira selecionar onde o total de aulas seja maior que 30
+### SELECT * FROM cursos where totaulas = 30;
+
+-- ira selecionar 
+### SELECT carga from cursos where totaulas = 30
+### GROUP BY carga;
+
+-- ira selecionar 
+### SELECT carga, count(nome) from cursos where totaulas = 30
+### GROUP BY carga;
+
+### SELECT * FROM cursos where totaulas = 30;
+
+-- ira mostrar o ano e contar quantos anos de cada se repete
+### SELECT ano, count(*) from cursos
+### GROUP BY ano
+### ORDER BY count(*);  -- desc do maior para o menor
+
+-- ira mostrar quem tiver o count ano maior que 5 ou igual, e contar quantos anos de cada se repete(
+### SELECT ano, count(*) from cursos
+### GROUP BY ano
+### HAVING count(ano) >= 5
+### ORDER BY count(*);  
+
+### SELECT ano, count(*) from cursos
+### WHERE totaulas > 30
+### GROUP BY ano
+### HAVING ano > 2013
+### ORDER BY count(*) desc;  
+
+-- ira mostra a media de horas dos cursos
+### SELECT avg(carga) from cursos;
+
+-- ira mostrar os cursos acima de 2015(agrupados por carga)
+### SELECT carga, count(*) from cursos 
+### WHERE ano > 2015
+### GROUP BY carga;
+
+
+-- ira mostrar os cursos acima de 2015(agrupados por carga) acima da media
+### SELECT carga, count(*) from cursos 
+### WHERE ano > 2015
+### GROUP BY carga 
+### HAVING carga > (select avg(carga) from cursos);
+
+-- EXERCICIOS AULA 13
+### USE cadastro;
+### SELECT * FROM humanos;
+
+-- 1 - UMA LISTA COM AS PROFISSOES DOS HUMANOS E SEUS RESPECTIVOS QUANTITATIVOS
+### SELECT profissao, count(*) from humanos
+### GROUP BY profissao
+### ORDER BY profissao;
+
+-- 2 - QUANTOS HUMANOS HOMENS E QUANTAS MULHERES NASCERAM AOPS 01-JAM-2005
+### SELECT sexo, count(*)from humanos
+### WHERE nascimento > '2005-01-01'
+### GROUP BY sexo;
+
+-- 3 -- UMA LISTA COM OS HUMANOS QUE NASCERAM FORA DO BRASIL, MOSTRANDO O PAIS DE ORIGEM E O TOTAL DE PESSOAS
+-- NASCIDAS LA. SO NOS INTERESSAM OS PAISES QUE TIVEREM MAIS DE 3 HUMANOS COM ESSA NACIONALIDADE
+### SELECT nacionalidade, count(*) from humanos
+### WHERE nacionalidade != 'Brasil'
+### GROUP BY nacionalidade
+### HAVING count(nacionalidade)>'3';
+
+-- 4 - UMA LISTA AGRUPADA PELA ALTURA DOS HUMANOS, MOSTRANDO QUANTAS PESSOAS PESAM MAIS DE 100KG E QUE ESTÃO 
+-- ACIMA DA MEDIA DE ALTUA DE TODOS OS HUMANOS
+### SELECT avg(altura) from humanos;
+
+### SELECT altura, count(*) from humanos
+### WHERE peso > '100'
+### GROUP BY altura
+### HAVING altura > (select avg(altura) from humanos);
