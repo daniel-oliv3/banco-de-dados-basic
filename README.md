@@ -570,11 +570,11 @@ Comando que seleciona linhas(mostra o conteudo de nome e de carga)
 ### ON c.idcurso = g.cursopreferido;
 
 -- AULA 16 INNER JOIN
-use cadastro;
+### USE cadastro;
 
 -- RELACIONAMENTO MUITOS PARA MUITOS
 -- criando uma nova tabela
-create table humano_assiste_curso (
+### CREATE TABLE humano_assiste_curso (
 	id int not null auto_increment,
     data date, 
     idhumano int,
@@ -582,32 +582,32 @@ create table humano_assiste_curso (
     primary key(id),
     foreign key(idgahumano) references humanos(id),
     foreign key(idcurso) references cursos(idcurso)
-)default charset=utf8;
+### )default charset=utf8;
 
 -- inserindo dados na tabela
-insert into humano_assiste_curso value
+### insert into humano_assiste_curso value
 (default, '2014-03-01', '1','2');
 
 -- mostra todo o conteudo da tabela
-select * from humano_assiste_curso;
+### select * from humano_assiste_curso;
 
 -- listagem nome do humanos e o nome do curso
 ### SELECT * FROM humanos g
 ### JOIN humano_assiste_curso a
-on g.id = a.idhumano;
+### on g.id = a.idhumano;
 
 -- exemplo 2
 ### SELECT g.nome, idcurso from humanos g
 ### JOIN humano_assiste_curso a
-on g.id = a.idhumano order by g.nome;
+### on g.id = a.idhumano order by g.nome;
 
 -- exemplo 3 deu erro!!!
 ### SELECT g.nome, c.nome from humanos g
 ### JOIN humano_assiste_curso a
 ### ON g.id = a.idhumano
 ### JOIN curso c 
-on c.idcurso = a.idcurso
-order by g.nome;
+### on c.idcurso = a.idcurso
+### order by g.nome;
 
 
 
