@@ -208,3 +208,73 @@ Comando que mostra o conteudo da tabela pessoas
 ### SELECT * FROM pessoas;
 
 
+Comando que mostra o conteudo da tabela cursos
+### SELECT * FROM cursos;
+
+
+Comando em ordem alfabetica(cima pra baixo)(asc ou sem nada)
+### ORDER BY nome; 
+
+
+Comando que mostra em ordem alfabetica(baixo para cima)
+### ORDER BY nome DESC;
+
+
+Comando que mostra o conteudo selecionado colunas(nome, carga, ano)
+### SELECT nome, carga, ano FROM cursos
+### ORDER BY nome;
+
+Comando que mostra o conteudo selecionado colunas em outra ordem (ano, nome, carga)
+### SELECT ano, nome, carga FROM cursos
+### ORDER BY nome;
+
+
+Comando que mostra o conteudo selecionado colunas ordenado por ano e por nome (ano, nome, carga)
+### SELECT ano, nome, carga FROM cursos
+### ORDER BY ano, nome;
+
+
+Comando que seleciona linhas(mostra o conteudo em que o ano e 2016 em ordem alfabetica)
+### SELECT * FROM cursos
+### WHERE ano = '2016' 
+### ORDER BY nome;
+
+
+Comando que seleciona linhas(mostra o conteudo de nome e de carga)
+### SELECT nome, carga FROM cursos
+### WHERE ano = '2016' 
+### ORDER BY nome;
+
+-- selecionando linhas(mostra o conteudo de nome, descrição e carga)
+select nome, descricao, carga from cursos
+where ano = '2016' 
+order by nome;
+
+-- selecionando linhas(mostra o conteudo de nome e carga)
+select nome, descricao from cursos
+where ano <= '2016' -- ano menor ou igual a 2016
+order by nome;
+
+-- selecionando intervalos(mostra o conteudo de nome e ano)
+select nome, ano from cursos
+where ano between 2014 and 2016; 
+
+-- selecionando intervalos(mostra o conteudo de nome e ano(ano decrescente e nome crescente))
+select nome, ano from cursos
+where ano between 2014 and 2016
+order by ano desc, nome; 
+
+-- selecionando intervalos(mostra o conteudo de nome e ano())
+select nome, descricao, ano from cursos
+where ano in (2014, 2016) -- onde o ano esteja entre esses valoes
+order by ano; 
+
+-- combinando testes(Mostra os cursos que tem carga maior que 35 e totaulas seja menor que 30.())
+select nome, carga, totaulas from cursos
+where carga > 35 and totaulas < 30 -- onde o ano esteja entre esses valoes
+order by ano;
+
+-- combinando testes(Mostra os cursos que tem carga maior que 35 e totaulas seja menor que 30.())
+select * from cursos -- todos os campos
+where carga > 35 and totaulas < 30 -- onde o ano esteja entre esses valoes
+order by ano;
