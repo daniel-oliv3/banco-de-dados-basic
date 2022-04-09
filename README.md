@@ -278,3 +278,134 @@ Comando que seleciona linhas(mostra o conteudo de nome e de carga)
 ### SELECT * FROM cursos -- todos os campos
 ### WHERE carga > 35 and totaulas < 30 
 ### ORDER BY ano;
+
+
+### -- 12 - SELECT (Parte 2).
+-- mostranto todos os cursos que começam com a letra 'p'. 
+### SELECT * FROM cursos
+### WHERE nome LIKE 'p%';
+
+-- mostranto todos os cursos que começam com a letra 'a'. 
+### SELECT * FROM cursos
+### WHERE nome LIKE 'a%';
+
+-- mostranto todos os cursos que terminam com a letra 'a'. 
+### SELECT * FROM cursos
+### WHERE nome LIKE '%a'; 
+
+-- mostranto todos os cursos(letra 'a' em qualquer lugar). 
+### SELECT * FROM cursos
+### WHERE nome LIKE '%a%'; 
+
+-- mostranto todos os cursos(letra 'a' - não tem a em lugar nenhum). no campo nome
+### SELECT * FROM cursos
+### WHERE nome NOT LIKE '%a%'; 
+
+-- mudando o conteudo da tabela cursos
+### WHERE cursos SET nome = 'PáOO' WHERE idcurso = '9';
+
+-- ira buscar os cursos que começem com PH e terminem com P
+### SELECT * FROM cursos
+### WHERE nome LIKE 'ph%p';
+
+-- ira buscar os cursos que começem com PH e terminem com P e mais alguma coisa
+### SELECT * FROM cursos
+### WHERE nome LIKE 'ph%p%';
+
+-- ira buscar os cursos que começem com PH e terminem com P e um caractere(letra ou numero)
+### SELECT * FROM cursos
+### WHERE nome LIKE 'ph%p_';
+
+-- pesquisando o nome de uma pessoa na tabela humanos. 
+### SELECT * FROM humanos
+### WHERE nome LIKE '%silva%';
+
+-- pesquisando o nome de uma pessoa na tabela humanos. 
+### SELECT * FROM humanos
+### WHERE nome LIKE '%_silva%';
+
+-- pesquisando o nome de uma pessoa na tabela humanos. (DANIEL)
+### SELECT * FROM humanos
+### WHERE nome LIKE '%daniel%';
+
+-- mostrando todo o conteudo da tabela humanos.
+### SELECT * FROM humanos;
+
+-- para saber a nacionalidade dos humanos
+### SELECT nacionalidade FROM humanos;
+
+-- consulta da nacionalidade dos humanos, ocorrencias repetidas não iram aparacer
+### SELECT distinct nacionalidade FROM humanos;
+
+-- consulta da nacionalidade dos humanos, ocorrencias repetidas não iram aparacer
+### SELECT distinct nacionalidade FROM humanos
+### ORDER BY nacionalidade; 
+
+-- mostrando as carga horarios dos cursos sem repetir horario
+### SELECT distinct carga FROM cursos
+### ORDER BY carga;
+
+-- contando quantos cadastro estao armazenado
+### SELECT count(*) FROM cursos;
+
+-- mostrando os cursos que tem carga hotarioa acima de 40 horas
+### SELECT * FROM cursos WHERE carga > 40;
+
+-- conta quantos cursos tem mais de 40 hrs carga horaria( função de agregação ) 
+### SELECT count(*) FROM cursos WHERE carga > 40; 
+
+-- mostra todas as cargas dos cursos ordenando crescentemente
+### SELECT * FROM cursos ORDER BY carga;
+
+-- mostra a maior carga de todos os cursos registrados no BD 
+### SELECT max(carga) FROM cursos;
+
+-- ira mostrar os curso de 2016
+### SELECT * FROM cursos WHERE ano = '2016';
+
+-- ira mostrar o curso que teve maior numero de aulas
+### SELECT max(totaulas) FROM cursos WHERE ano = '2016';
+
+-- ira mostrar o curso que teve menor numero de aulas
+### SELECT min(totaulas) FROM cursos WHERE ano = '2016';
+
+-- ira mostrar o curso que teve menor numero de aulas
+### SELECT nome, min(totaulas) FROM cursos WHERE ano = '2016';
+
+-- ira somar todas as horas de totaualas do ano de 2016
+### SELECT sum(totaulas) FROM cursos WHERE ano = '2016'; 
+
+-- ira tirar a media todas as horas de totaualas do ano de 2016
+### SELECT avg(totaulas) FROM cursos WHERE ano = '2016'; 
+
+### -- LISTA DE EXERCICIOS AULA 12
+### USE cadastro;
+
+### SELECT * FROM humanos;
+
+-- 1 - UMA LISTA COM O NOME DE TODAS AS HUMANOS
+### SELECT nome FROM humanos WHERE sexo = 'F' ORDER BY nome;
+
+-- 2 - UMA LISTA COM OS DADOS DE TODOS AQUELES QUE NASCERAM ENTRE 1/JAN/2000 E 31/DEZ/2015
+### SELECT nascimento FROM humanos WHERE nascimento BETWEEN '2000-01-01' AND '2015-12-31';
+
+-- 3 - UMA LISTA COM O NOME DE TODOS OS HOMENS QUE TRABALHAM COMO PROGRAMADORES
+### SELECT nome, profissao FROM humanos WHERE sexo = 'M' AND profissao = 'Programador' ORDER BY nome;
+
+-- 4 - UMA LISTAS COM OS DADOS DE TODAS AS MULHERES QUE NASCERAM NO BRASIL E QUE TEM SEU NOME INICIADO COM A LETRA J
+### SELECT * FROM humanos WHERE sexo ='F' AND nacionalidade ='Brasil' AND nome LIKE 'J%' ORDER BY nome;
+
+-- 5 - UMA LISTA COM O NOME E NACIONALIDADE DE TODOS OS HOMENS QUE TEM SILVA NO NOME, NÃO NASCERAM NO BRASIL E PESAM MENOS DE 100 KG
+### SELECT nome, nacionalidade FROM humanos WHERE sexo = 'M' AND nome LIKE '%_silva%' AND nacionalidade != 'brasil' AND peso < '100' ORDER BY nome;
+
+-- 6 - QUAL E A MAIOR ALTURA ENTRE OS HUMANOS QUE MORAM NO BRASIL
+### SELECT max(altura) FROM humanos WHERE sexo='M' AND nacionalidade='Brasil' ORDER BY nome;
+
+-- 7 - QUAL E A MEDIA DE PESO DOS HUMANOS CADASTRADOS
+### SELECT avg(peso) FROM humanos;
+
+-- 8 - QUAL E O MENOR PESO ENTRE AS Humanos MULHERES QUE NASCERAM FORA DO BRASIL E ENTRE 01/JAN/1990 E 31/DEZ/2000
+### SELECT min(peso) FROM humanos WHERE sexo='F' AND nacionalidade !='Brasil' AND nascimento BETWEEN '1990-01-01' AND '2000-12-31';
+
+-- 9 - QUANTOS HUMANOS MULHERES TEM MAIS DE 1.90M DE ALTURA
+### SELECT count(altura) FROM humanos WHERE sexo='F' and altura > '1.90';
