@@ -499,3 +499,128 @@ Comando que seleciona linhas(mostra o conteudo de nome e de carga)
 ### WHERE peso > '100'
 ### GROUP BY altura
 ### HAVING altura > (select avg(altura) from humanos);
+
+
+
+### AULA 15 - CHAVES ESTRANGEIRAS E JOIN
+-- 15 - Chaves Estrangeiras e JOIN
+### USE cadastro;
+
+-- mostra a estrutura tabela humanos
+### DESCRIBE humanos;
+
+-- adicionando campo
+### ALTER TABLE humanos
+### ADD COLUMN cursopreferido INT;
+
+-- adicionando chave estrangeira e fazendo a ligação entre cursopreferido e idcurso.
+### ALTER TABLE humanos
+### ADD FOREIGN KEY (cursopreferido)
+### REFERENCES cursos (idcurso);
+
+-- mostrar toda a tabela em ordem alfabetica
+### SELECT * FROM humanos ORDER BY nome;
+
+-- mostrar toda a tabela em ordem alfabetica
+### SELECT * FROM cursos;
+
+-- adicionando curso preferido
+### UPDATE humanos SET cursopreferido = '5' WHERE id = '62';
+
+-- ERRO de integridade referencial (pois ja existe uma relação entre o curso 6 e humanos.
+### DELETE FROM cursos WHERE idcurso = '6';
+
+
+-- integridade referencial (ira apagar pos-não existe relação.
+### DELETE FROM cursos WHERE idcurso = '28';
+
+-- mostrando o nome do curso preferido
+### SELECT nome, cursopreferido FROM humanos;
+
+-- Trabalhar com junções - Juntando a tabela humanos com a tabela cursos.
+### SELECT humanos.nome, cursos.nome, cursos.ano 
+### FROM humanos JOIN cursos
+### ON cursos.idcurso = humanos.cursopreferido;  
+
+
+### SELECT * FROM humanos order by nome;
+ 
+
+ -- Trabalhar com junções - Juntando a tabela humanos com a tabela cursos parte 2.
+### SELECT humanos.nome, cursos.nome, cursos.ano 
+### FROM humanos INNER JOIN cursos  
+### ON cursos.idcurso = humanos.cursopreferido 
+### ORDER BY humanos.nome; 
+
+ -- Trabalhar com junções - Juntando a tabela humanos com a tabela cursos parte 3
+ -- APELIDOS DE COLUNAS(AS).
+### SELECT g.nome, c.nome, c.ano 
+### FROM humanos AS g INNER JOIN cursos AS c
+### ON c.idcurso = g.cursopreferido 
+### ORDER BY g.nome; 
+
+-- EXEMPLO OUTER JOIN
+### SELECT g.nome, c.nome, c.ano 
+### FROM humanos AS g LEFT OUTER JOIN cursos AS c
+### ON c.idcurso = g.cursopreferido;
+
+-- EXEMPLO OUTER JOIN dando preferencia para a tabela do lado direito (cursos)
+### SELECT g.nome, c.nome, c.ano 
+### FROM humanos AS g RIGHT OUTER JOIN cursos AS c
+### ON c.idcurso = g.cursopreferido;
+
+-- AULA 16 INNER JOIN
+use cadastro;
+
+-- RELACIONAMENTO MUITOS PARA MUITOS
+-- criando uma nova tabela
+create table humano_assiste_curso (
+	id int not null auto_increment,
+    data date, 
+    idhumano int,
+    idcurso int,
+    primary key(id),
+    foreign key(idgahumano) references humanos(id),
+    foreign key(idcurso) references cursos(idcurso)
+)default charset=utf8;
+
+-- inserindo dados na tabela
+insert into humano_assiste_curso value
+(default, '2014-03-01', '1','2');
+
+-- mostra todo o conteudo da tabela
+select * from humano_assiste_curso;
+
+-- listagem nome do humanos e o nome do curso
+### SELECT * FROM humanos g
+### JOIN humano_assiste_curso a
+on g.id = a.idhumano;
+
+-- exemplo 2
+### SELECT g.nome, idcurso from humanos g
+### JOIN humano_assiste_curso a
+on g.id = a.idhumano order by g.nome;
+
+-- exemplo 3 deu erro!!!
+### SELECT g.nome, c.nome from humanos g
+### JOIN humano_assiste_curso a
+### ON g.id = a.idhumano
+### JOIN curso c 
+on c.idcurso = a.idcurso
+order by g.nome;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- apaga todo o banco de dadaos(CUIDADO!)
+drop database cadastro;
