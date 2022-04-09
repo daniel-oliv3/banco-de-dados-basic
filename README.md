@@ -246,35 +246,35 @@ Comando que seleciona linhas(mostra o conteudo de nome e de carga)
 ### ORDER BY nome;
 
 -- selecionando linhas(mostra o conteudo de nome, descrição e carga)
-select nome, descricao, carga from cursos
-where ano = '2016' 
-order by nome;
+### SELECT nome, descricao, carga FROM cursos
+### WHERE ano = '2016' 
+### ORDER BY nome;
 
 -- selecionando linhas(mostra o conteudo de nome e carga)
-select nome, descricao from cursos
-where ano <= '2016' -- ano menor ou igual a 2016
-order by nome;
+### SELECT nome, descricao FROM cursos
+### WHERE ano <= '2016' 
+### ORDER BY nome;
 
 -- selecionando intervalos(mostra o conteudo de nome e ano)
-select nome, ano from cursos
-where ano between 2014 and 2016; 
+### SELECT nome, ano FROM cursos
+### WHERE ano between 2014 and 2016; 
 
 -- selecionando intervalos(mostra o conteudo de nome e ano(ano decrescente e nome crescente))
-select nome, ano from cursos
-where ano between 2014 and 2016
-order by ano desc, nome; 
+### SELECT nome, ano FROM cursos
+### WHERE ano between 2014 and 2016
+### ORDER BY ano desc, nome; 
 
 -- selecionando intervalos(mostra o conteudo de nome e ano())
-select nome, descricao, ano from cursos
-where ano in (2014, 2016) -- onde o ano esteja entre esses valoes
-order by ano; 
+### SELECT nome, descricao, ano FROM cursos
+### WHERE ano in (2014, 2016) 
+### ORDER BY ano; 
 
 -- combinando testes(Mostra os cursos que tem carga maior que 35 e totaulas seja menor que 30.())
-select nome, carga, totaulas from cursos
-where carga > 35 and totaulas < 30 -- onde o ano esteja entre esses valoes
-order by ano;
+### SELECT nome, carga, totaulas FROM cursos
+### WHERE carga > 35 and totaulas < 30 
+### ORDER BY ano;
 
 -- combinando testes(Mostra os cursos que tem carga maior que 35 e totaulas seja menor que 30.())
-select * from cursos -- todos os campos
-where carga > 35 and totaulas < 30 -- onde o ano esteja entre esses valoes
-order by ano;
+### SELECT * FROM cursos -- todos os campos
+### WHERE carga > 35 and totaulas < 30 
+### ORDER BY ano;
