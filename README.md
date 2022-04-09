@@ -589,25 +589,25 @@ Comando que seleciona linhas(mostra o conteudo de nome e de carga)
 (default, '2014-03-01', '1','2');
 
 -- mostra todo o conteudo da tabela
-### select * from humano_assiste_curso;
+### SELECT * FROM humano_assiste_curso;
 
 -- listagem nome do humanos e o nome do curso
 ### SELECT * FROM humanos g
 ### JOIN humano_assiste_curso a
-### on g.id = a.idhumano;
+### ON g.id = a.idhumano;
 
 -- exemplo 2
 ### SELECT g.nome, idcurso from humanos g
 ### JOIN humano_assiste_curso a
-### on g.id = a.idhumano order by g.nome;
+### ON g.id = a.idhumano ORDER BY g.nome;
 
 -- exemplo 3 deu erro!!!
 ### SELECT g.nome, c.nome from humanos g
 ### JOIN humano_assiste_curso a
 ### ON g.id = a.idhumano
 ### JOIN curso c 
-### on c.idcurso = a.idcurso
-### order by g.nome;
+### ON c.idcurso = a.idcurso
+### ORDER BY g.nome;
 
 
 
