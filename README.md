@@ -202,6 +202,7 @@ Comando show table mostra todas as tabelas do banco de dados
 
 
 ### 9/10 - PHPMyAdmin
+--
 
 ### 11 - SELECT (Parte 1)
 Comando que mostra o conteudo da tabela pessoas
@@ -213,10 +214,13 @@ Comando que mostra o conteudo da tabela cursos
 
 
 Comando em ordem alfabetica(cima pra baixo)(asc ou sem nada)
-### ORDER BY nome; 
-
+### SELECT * FROM cursos
+### ORDER BY nome;
+ou
+### ORDER BY nome ASC;
 
 Comando que mostra em ordem alfabetica(baixo para cima)
+### SELECT * FROM cursos
 ### ORDER BY nome DESC;
 
 
@@ -623,4 +627,4 @@ Comando que seleciona linhas(mostra o conteudo de nome e de carga)
 
 
 -- apaga todo o banco de dadaos(CUIDADO!)
-drop database cadastro;
+### drop database cadastro;
