@@ -369,7 +369,7 @@ select profissao, count(*) from gafanhotos
 group by profissao
 order by profissao;
 
--- 2 - QUANTOS GAFANHOTOS HOMENS E QUANTAS MULHERES NASCERAM AOPS 01-JAM-2005
+-- 2 - QUANTOS GAFANHOTOS HOMENS E QUANTAS MULHERES NASCERAM APOS 01-JAM-2005
 select sexo, count(*)from gafanhotos
 where nascimento > '2005-01-01'
 group by sexo;
