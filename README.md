@@ -1,4 +1,9 @@
-### 3* ----- Criando a Primeira Tabela.
+##
+### Banco de Dados Básico.
+##
+
+
+### 3 - Criando a Primeira Tabela.
 
 **Comando para criar um banco de dados**.
 ```db
@@ -6,34 +11,39 @@ CREATE DATABASE cadastro;
 ```
 
 
-Comando para usar o banco de dados criado.
-### USE cadastro;
+**Comando para usar o banco de dados criado**.
+```db
+USE cadastro;
+```
 
-
-Comando para criar uma tabela Exp 01.
-### CREATE TABLE pessoas(
+**Comando para criar uma tabela Exp 01**.
+```db
+CREATE TABLE pessoas(
     nome varchar(30),
     idade tinyint(3),
     sexo char(1),
     peso float,
     nacionalidade varchar(20)
-### );
+);
+```
 
+**Comando DESCRIBE mostra uma descrição da tabela criada**.
+```db
+DESCRIBE pessoas;
+```
 
-Comando DESCRIBE mostra uma descrição da tabela criada.
-### DESCRIBE pessoas;
+### 4* - Atualizando a Tabela com Id.
+**Comando para apagar um banco de dados**.
+```db
+DROP DATABASE cadastro;
+```
 
-
-### 4* ----- Atualizando a Tabela com Id.
-Comando para apagar um banco de dados.
-### DROP DATABASE cadastro;
-
-
-Comando para criar uma tabela Exp 02.
-### CREATE DATABASE cadastro2
-### DEFAULT CHARACTER SET utf8
-### DEFAULT COLLATE utf8_general_ci;
-### CREATE TABLE `pessoas`(
+**Comando para criar uma tabela Exp 02**.
+```db
+CREATE DATABASE cadastro2
+DEFAULT CHARACTER SET utf8
+DEFAULT COLLATE utf8_general_ci;
+CREATE TABLE `pessoas`(
     `id` int not null auto_increment,
     `nome` varchar(30) not null,
     `nascimento` date,
@@ -42,8 +52,8 @@ Comando para criar uma tabela Exp 02.
     `altura` decimal(3, 2),
     `nacionalidade` varchar(20) default 'Brasil',
     primary key (id)
-### )default charset = utf8;
-
+)default charset = utf8;
+```
 
 ### 5* ----- Inserindo Dados na Tabela (INSERT INTO).
 Comando para inserir dados na tabela Exp 01.
