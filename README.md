@@ -1,6 +1,9 @@
 ### 3* ----- Criando a Primeira Tabela.
-Comando para criar um banco de dados.
-### CREATE DATABASE cadastro;
+
+**Comando para criar um banco de dados**.
+```db
+CREATE DATABASE cadastro;
+```
 
 
 Comando para usar o banco de dados criado.
