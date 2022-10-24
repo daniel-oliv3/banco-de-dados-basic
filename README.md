@@ -56,100 +56,120 @@ CREATE TABLE `pessoas`(
 ```
 
 ### 5* ----- Inserindo Dados na Tabela (INSERT INTO).
-Comando para inserir dados na tabela Exp 01.
-### INSERT INTO pessoas (nome, nascimento, sexo, peso, altura, nacionalidade) VALUES
+**Comando para inserir dados na tabela Exp 01**.
+```db
+INSERT INTO pessoas (nome, nascimento, sexo, peso, altura, nacionalidade) VALUES
                    ('Sapup3', '1985-13-08', 'M', '78.5', '1.65', 'Brasil');
+```
 
+**Comando para visualizar todos os campos da tabela**.
+```db
+SELECT * FROM pessoas;
+```
 
-Comando para visualizar todos os campos da tabela.
-### SELECT * FROM pessoas;
-
-
-Comando para inserir dados na tabela Exp 02.
-### INSERT INTO pessoas (nome, nascimento, sexo, peso, altura, nacionalidade) VALUES
+**Comando para inserir dados na tabela Exp 02**.
+```db
+INSERT INTO pessoas (nome, nascimento, sexo, peso, altura, nacionalidade) VALUES
                    (DEFAULT, 'Sapup3', '1985-13-08', 'M', '78.5', '1.65', DEFAULT);
+```
 
-
-Comando para inserir varios dados na tabela Exp 03.
-### INSERT INTO pessoas  VALUES
+**Comando para inserir varios dados na tabela Exp 03**.
+```db
+INSERT INTO pessoas  VALUES
                    (DEFAULT, 'Thiago', '1986-18-12', 'M', '80.5', '1.67', DEFAULT),
                    (DEFAULT, 'Daniel', '1985-13-08', 'M', '78.5', '1.65', 'Brasil'),
                    (DEFAULT, 'Janaína', '2004-03-07', 'F', '50.5', '1.65', 'Eua');
-
+```
 
 ### 6* ----- Alterando a Estrutura de uma Tabela (ALTER TABLE).
-Comando para adicionar um novo campo na tabela
-### ALTER TABLE pessoas
+**Comando para adicionar um novo campo na tabela**
+```db
+ALTER TABLE pessoas
 ADD COLUMN profissao VARCHAR(10);
+```
 
+**Comando de descrição do container pessoas**.
+```db
+DESC pessoas;
+```
 
-Comando de descrição do container pessoas.
-### DESC pessoas;
+**Comando para apagar um coluna da tabela**.
+```db
+ALTER TABLE pessoas
+DROP COLUMN profissao;
+```
 
+**Comando para escolher a posição da coluna**.
+```db
+ALTER TABLE pessoas
+ADD COLUMN profissao varchar(10) AFTER nome;
+```
 
-Comando para apagar um coluna da tabela.
-### ALTER TABLE pessoas
-### DROP COLUMN profissao;
+**Comando para escolher a primeira posição da coluna**.
+```db
+ALTER TABLE pessoas
+ADD COLUMN codigo INT FIRST;
+```
 
+**Comando para modificar definições**.
+```db
+ALTER TABLE pessoas
+MODIFY COLUMN profissao varchar(20);
+```
 
-Comando para escolher a posição da coluna.
-### ALTER TABLE pessoas
-### ADD COLUMN profissao varchar(10) AFTER nome;
+**Comando para renomear uma coluna**.
+```db
+ALTER TABLE pessoas
+CHANGE COLUMN profissao prof varchar(20);
+```
 
+**Comando para renomear toda a tabela**.
+```db
+ALTER TABLE pessoas
+RENAME TO humanos;
+```
 
-Comando para escolher a primeira posição da coluna.
-### ALTER TABLE pessoas
-### ADD COLUMN codigo INT FIRST;
-
-
-Comando para modificar definições.
-### ALTER TABLE pessoas
-### MODIFY COLUMN profissao varchar(20);
-
-
-Comando para renomear uma coluna.
-### ALTER TABLE pessoas
-### CHANGE COLUMN profissao prof varchar(20);
-
-
-Comando para renomear toda a tabela.
-### ALTER TABLE pessoas
-### RENAME TO humanos;
-
-
-Comando para criar uma nova tabela e verificar se ela ja existe.
-### CREATE TABLE IF NOT EXISTS cursos (
+**Comando para criar uma nova tabela e verificar se ela ja existe**.
+```db
+CREATE TABLE IF NOT EXISTS cursos (
     nome varchar(30) not null unique,
     desxricao text,
     carga int unsigned,
     totaulas int unsgned,
     ano year default '2022'
-### )default charset=utf8;
+)default charset=utf8;
+```
 
+**Comando para adicionar uma nova coluna na tabela**.
+```db
+ALTER TABLE cursos
+ADD COLUMN idcursos INT FIRST;
+```
 
-Comando para adicionar uma nova coluna na tabela.
-### ALTER TABLE cursos
-### ADD COLUMN idcursos INT FIRST;
+**Comando para atribuir a idcursos como sendo a chave primaria**.
+```db
+ALTER TABLE cursos
+ADD PRIMARY KEY (idcursos);
+```
 
+**Comando que mostra a descrição**.
+```db
+DESCRIBE cursos;
+```
+**Ou**
+```db
+desc cursos;
+```
 
-Comando para atribuir a idcursos como sendo a chave primaria.
-### ALTER TABLE cursos
-### ADD PRIMARY KEY (idcursos);
-
-
-Comando que mostra a descrição.
-### describe cursos;
-ou
-### desc cursos;
-
-
-Comando para apagar a tabela.
-### DROP TABLE curso;
-
+**Comando para apagar a tabela**.
+```db
+DROP TABLE curso;
+```
 
 ### 7 - Manipulando Linhas (UPDATE, DELETE e TRUNCATE).
-Comando para inserir novos registros.
-### INSERT INTO cursos VALUES
+**Comando para inserir novos registros**.
+```db
+INSERT INTO cursos VALUES
 ('1','HTML4','Curso de HTML5', '40','37','2014'),
 
 ('2','Algoritmos','Lógica de Programação','20','15','2014'),
@@ -169,68 +189,83 @@ Comando para inserir novos registros.
 ('9','Cozinha Árabe','Aprenda a fazer Kibe','40','30','2018'), 
 
 ('10','Youtuber','Gerar polêmica e ganhar inscritos','5','2','2018');
+```
 
 
+**Comando para manipulação de registro - (Update)**.
+```db
+UPDATE cursos
+SET nome = 'HTML5'
+WHERE idcursos = '1';
+```
 
-Comando para manipulação de registro - (Update).
-### UPDATE cursos
-### SET nome = 'HTML5'
-### WHERE idcursos = '1';
+```db
+UPDATE cursos
+SET nome = 'PHP', ano = '2015'
+WHERE idcursos = '4';
+```
 
+```db
+UPDATE cursos
+SET nome = 'Java', carga = '40', ano = '2015'
+WHERE idcursos = '5'
+LIMIT 1;
+```
 
-### UPDATE cursos
-### SET nome = 'PHP', ano = '2015'
-### WHERE idcursos = '4';
+**Comando para remover uma linha da tabela (Delete)**.
+```db
+DELETE FROM cursos
+WHERE idcursos = '8';
+```
 
+```db
+DELETE FROM cursos
+WHERE ANO = '2018'
+LIMIT 3;
+```
 
-### UPDATE cursos
-### SET nome = 'Java', carga = '40', ano = '2015'
-### WHERE idcursos = '5'
-### LIMIT 1;
+**Comando para remover todas as linhas da tabela (Truncate)**.
+```db
+TRUNCATE TABLE cursos;
+```
 
-
-Comando para remover uma linha da tabela (Delete).
-### DELETE FROM cursos
-### WHERE idcursos = '8';
-
-
-### DELETE FROM cursos
-### WHERE ANO = '2018'
-### LIMIT 3;
-
-
-Comando para remover todas as linhas da tabela (Truncate).
-### TRUNCATE TABLE cursos;
-
-
-Comando para mostrar todos os registros da tabela
-### SELECT * FROM cursos;
-
+**Comando para mostrar todos os registros da tabela**
+```db
+SELECT * FROM cursos;
+```
 
 
 ### 8 - Gerenciando Cópias de Segurança MySQL.
 
-Comando show table mostra todas as tabelas do banco de dados
-### SHOW TABLE;
-
+**Comando show table mostra todas as tabelas do banco de dados**
+```db
+SHOW TABLE;
+```
 
 ### 9/10 - PHPMyAdmin
 --
 
 ### 11 - SELECT (Parte 1)
-Comando que mostra o conteudo da tabela pessoas
-### SELECT * FROM pessoas;
+**Comando que mostra o conteudo da tabela pessoas**
+```db
+SELECT * FROM pessoas;
+```
 
+**Comando que mostra o conteudo da tabela cursos**
+```db
+SELECT * FROM cursos;
+```
 
-Comando que mostra o conteudo da tabela cursos
-### SELECT * FROM cursos;
+**Comando em ordem alfabetica(cima pra baixo)(asc ou sem nada)**
+```db
+SELECT * FROM cursos
+ORDER BY nome;
+```
 
-
-Comando em ordem alfabetica(cima pra baixo)(asc ou sem nada)
-### SELECT * FROM cursos
-### ORDER BY nome;
-ou
-### ORDER BY nome ASC;
+**Ou**
+```db
+ORDER BY nome ASC;
+```
 
 Comando que mostra em ordem alfabetica(baixo para cima)
 ### SELECT * FROM cursos
